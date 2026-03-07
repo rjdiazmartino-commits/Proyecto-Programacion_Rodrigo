@@ -13,3 +13,14 @@ public class Autoconsumo extends MedidaCorrectoaBase {
         super(descripcion);
         this.porcentajeReduccion = porcentajeReduccion;
     }
+    @Override
+    public double reducirEmisiones(List<FuenteEmision> fuentes) {
+        double reduccion = 0;
+        for (FuenteEmision f : fuentes) {
+            if (f instanceof Electricidad) {
+                reduccion += f.calcularEmisiones() * porcentajeReduccion / 100;
+            }
+        }
+        return reduccion;
+    }
+
