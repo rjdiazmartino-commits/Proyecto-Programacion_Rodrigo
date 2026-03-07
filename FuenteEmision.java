@@ -6,5 +6,10 @@ public abstract class FuenteEmision {
     protected String descripcion;
     protected double factorEmision;  // kg CO2 por unidad consumida
     protected double costeUnitario;  // euros por unidad consumida
-
+    /** Constructor de FuenteEmision */
+    public FuenteEmision(String descripcion, double factorEmision, double costeUnitario) {
+        this.descripcion = descripcion;
+        this.factorEmision = factorEmision;
+        this.costeUnitario = costeUnitario;
+    }
 
