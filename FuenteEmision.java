@@ -13,3 +13,15 @@ public abstract class FuenteEmision {
         this.costeUnitario = costeUnitario;
     }
 
+    /** @return kg de CO2 emitidos */
+    public abstract double calcularEmisiones();
+
+    /** @return coste en euros */
+    public abstract double calcularCoste();
+
+    @Override
+    public String toString() {
+        return descripcion + " -> " + calcularEmisiones() + " kg CO2 | " + calcularCoste() + " €";
+    }
+}
+
