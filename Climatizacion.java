@@ -10,3 +10,14 @@ public class Climatizacion extends FuenteEmision {
         super(descripcion, factorEmision, costeUnitario);
         this.horasUso = horasUso;
     }
+
+    @Override
+    public double calcularEmisiones() {
+        return horasUso * factorEmision;
+    }
+
+    @Override
+    public double calcularCoste() {
+        return horasUso * costeUnitario;
+    }
+}
